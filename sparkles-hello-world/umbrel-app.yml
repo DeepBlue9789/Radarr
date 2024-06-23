@@ -1,8 +1,8 @@
 manifestVersion: 1
-id: Bittorrent
-name: Bittorrent
+id: sparkles-hello-world
+name: Hello World
 tagline: Replace this tagline with your app's tagline
-icon: https://upload.wikimedia.org/wikipedia/commons/6/66/New_qBittorrent_Logo.svg
+icon: https://svgur.com/i/mvA.svg
 category: Development
 version: "1.0.0"
 port: 4000
