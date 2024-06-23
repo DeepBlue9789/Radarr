@@ -1,30 +1,47 @@
-manifestVersion: 1
-id: sparkles-hello-world
-name: Hello World
-tagline: Replace this tagline with your app's tagline
-icon: https://svgur.com/i/mvA.svg
-category: Development
-version: "1.0.0"
-port: 4000
+manifestVersion: 1.1
+id: deep-qbittorrent
+category: networking
+name: qBittorrent
+version: "4.6.5-hotfix"
+tagline: Free and reliable P2P Bittorrent client
 description: >-
-  Add your app's description here.
+  qBittorrent is an open-source software alternative to µTorrent. It's designed to meet the needs of most users while using as little CPU and memory as possible.
 
+  
+  🛠️ SET-UP INSTRUCTIONS
 
-  You can also add newlines!
+  - qBittorrent on umbrelOS is configured to work without any additional configuration. Please make sure that you do not change the default download path in the app settings. It should remain set to "/app/qBittorrent/downloads" to ensure that your downloads show up in your main Umbrel downloads folder.
 
-developer: Umbrel
-website: https://umbrel.com
-submitter: Umbrel
-submission: https://github.com/getumbrel/umbrel-hello-world-app
-repo: https://github.com/getumbrel/umbrel-hello-world-app
-support: https://github.com/getumbrel/umbrel-hello-world-app/issues
-gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - This app comes bundled with VueTorrent, a sleek user interface that provides an alternative to qBittorrent's default interface.
+  To enable VueTorrent, simply navigate to tools --> options --> Web UI and select "Use alternative Web UI".
+
+  - It is recommended to change the default password for the app after installation.
+  
+
+  ⚠️ qBittorrent downloads torrents over the Clearnet, not Tor.
 releaseNotes: >-
-  Add what's new in the latest version of your app here.
+  This hotfix release addresses an issue where users who installed qBittorrent v4.6.5 on umbrelOS sometimes needed to restart the app to access the web interface.
+
+
+  ⚠️ After updating, please ensure that your downloads path in the app is set to the default "/app/qBittorrent/downloads" path. This will make it so that your downloads show up in your main Umbrel downloads folder.
+  
+  
+  Read the full release notes at https://www.qbittorrent.org/news#sun-may-26th-2024---qbittorrent-v4.6.5-release
+developer: qBittorrent
+website: https://qbittorrent.org/
 dependencies: []
+repo: https://github.com/qBittorrent/qBittorrent
+support: https://github.com/qBittorrent/qBittorrent/issues
+port: 8094
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
 path: ""
-defaultUsername: ""
-defaultPassword: ""
+defaultUsername: "admin"
+defaultPassword: "adminadmin"
+torOnly: false
+permissions:
+  - STORAGE_DOWNLOADS
+submitter: ASOwnerYT
+submission: https://github.com/getumbrel/umbrel-apps/pull/468
