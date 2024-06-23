@@ -3,30 +3,18 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: radarr_server_1
-      APP_PORT: 7878
-      PROXY_AUTH_WHITELIST: "/api/*"
+      APP_HOST: qbittorrent_server_1
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
 
   server:
-    image: linuxserver/radarr:5.6.0@sha256:594fab7afdb1de2f61a82835f3f2377a6220d4940d4b49bfa95e82d8a6b13a95
+    image: hotio/qbittorrent:release-4.6.5@sha256:6a665f19c2d123dd9063ac61345cbc377d9238e66bb3964a6b8ec29a21b3416d
     environment:
       - PUID=1000
       - PGID=1000
+      # - UMASK=002
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
+      # /app/qBittorrent/downloads is the default path set in qBittorrent
       - ${UMBREL_ROOT}/data/storage/downloads:/downloads
     restart: on-failure
-
-  mac:
-    image: getumbrel/media-app-configurator:v1.2.0@sha256:6aa568b53f6743dc4a7b3212f97b9d4ca78800ede5eadc0e4b80c7f3af50eda3
-    user: "1000:1000"
-    restart: on-failure
-    volumes:
-      - ${APP_DATA_DIR}/data/config:/config
-      - ${UMBREL_ROOT}/data/storage/downloads:/downloads
-    environment:
-      APP_ID: "radarr"
-      APP_URL: "http://radarr_server_1:7878"
-      TRANSMISSION_HOST: "transmission_server_1"
-      TRANSMISSION_PORT: 9091
-      ROOT_FOLDER: "/downloads/movies"
