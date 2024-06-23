@@ -1,8 +1,8 @@
 manifestVersion: 1
-id: sparkles-hello-world
-name: Hello World
+id: qBittorrent
+name: qBittorrent
 tagline: Replace this tagline with your app's tagline
-icon: https://svgur.com/i/mvA.svg
+icon: https://upload.wikimedia.org/wikipedia/commons/6/66/New_qBittorrent_Logo.svg
 category: Development
 version: "1.0.0"
 port: 4000
