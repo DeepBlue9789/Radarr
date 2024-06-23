@@ -1,5 +1,5 @@
 manifestVersion: 1.1
-id: deep-qbittorrent
+id: qbittorrent
 category: networking
 name: qBittorrent
 version: "4.6.5-hotfix"
